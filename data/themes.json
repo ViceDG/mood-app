@@ -2,26 +2,26 @@
   "desert": {
     "name": "desert",
     "image": "/images/scenery/desert.jpeg",
-    "audio": "/audio//desert.wma"
+    "audio": "/audio/desert.wma"
   },
   "field": {
     "name": "field",
     "image": "/images/scenery/field.jpeg",
-    "audio": "/audio//desert.wav"
+    "audio": "/audio/desert.wav"
   },
   "mountains": {
     "name": "mountains",
     "image": "/images/scenery/mountains.jpeg",
-    "audio": "/audio//desert.wav"
+    "audio": "/audio/desert.wav"
   },
   "snow": {
     "name": "snow",
     "image": "/images/scenery/snow.jpeg",
-    "audio": "/audio//desert.wma"
+    "audio": "/audio/desert.wma"
   },
   "swamp": {
     "name": "swamp",
     "image": "/images/scenery/swamp.jpeg",
-    "audio": "/audio//desert.wma"
+    "audio": "/audio/desert.wma"
   }
 }

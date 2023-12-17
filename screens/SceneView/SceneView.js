@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 
-const SceneSelect = ({ navigation }) => {
+const SceneView = ({ navigation }) => {
   return (
     <View>
-      <Text>Select your scene</Text>
+      <Text>Page One</Text>
       <Button
         title="Go To Home Screen"
         onPress={() => navigation.navigate("Home")}
@@ -13,4 +13,4 @@ const SceneSelect = ({ navigation }) => {
   );
 };
 
-export default SceneSelect;
+export default SceneView;
