@@ -1,27 +1,27 @@
-{
-  "desert": {
+[
+  {
     "name": "desert",
-    "image": "/images/scenery/desert.jpeg",
-    "audio": "/audio/desert.wma"
+    "image": "../../assets/public/images/scenery/desert.jpeg",
+    "audio": "../../assets/public/audio/desert.wma"
   },
-  "field": {
+  {
     "name": "field",
-    "image": "/images/scenery/field.jpeg",
-    "audio": "/audio/desert.wav"
+    "image": "../../assets/public/images/scenery/field.jpeg",
+    "audio": "../../assets/public/audio/desert.wav"
   },
-  "mountains": {
+  {
     "name": "mountains",
-    "image": "/images/scenery/mountains.jpeg",
-    "audio": "/audio/desert.wav"
+    "image": "../../assets/public/images/scenery/mountains.jpeg",
+    "audio": "../../assets/public/audio/desert.wav"
   },
-  "snow": {
+  {
     "name": "snow",
-    "image": "/images/scenery/snow.jpeg",
-    "audio": "/audio/desert.wma"
+    "image": "../../assets/public/images/scenery/snow.jpeg",
+    "audio": "../../assets/public/audio/desert.wma"
   },
-  "swamp": {
+  {
     "name": "swamp",
-    "image": "/images/scenery/swamp.jpeg",
-    "audio": "/audio/desert.wma"
+    "image": "../../assets/public/images/scenery/swamp.jpeg",
+    "audio": "../../assets/public/audio/desert.wma"
   }
-}
+]

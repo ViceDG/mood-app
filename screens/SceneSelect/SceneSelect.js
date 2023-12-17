@@ -1,14 +1,31 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, FlatList, Image } from "react-native";
+import themes from "../../data/themes.json";
+import { desert, field, mountains, snow, swamp } from "../../data/images";
 
 const SceneSelect = ({ navigation }) => {
+  const sceneObj = {
+    desert: desert,
+    field: field,
+    mountains: mountains,
+    snow: snow,
+    swamp: swamp,
+  };
+
   return (
     <View>
       <Text>Select your scene</Text>
-      <Button
-        title="Go To Home Screen"
-        onPress={() => navigation.navigate("Home")}
+      <FlatList
+        data={themes}
+        renderItem={({ item, index }) => (
+          <View key={index}>
+            <Image source={sceneObj[item.name]} />
+            <Text>{item.name}</Text>
+            <Button title="Select">Select</Button>
+          </View>
+        )}
       />
+      <Button title="Back" onPress={() => navigation.navigate("Home")} />
     </View>
   );
 };
