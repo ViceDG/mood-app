@@ -4,14 +4,7 @@ import { View, Text, Button, ImageBackground } from "react-native";
 import { useThemeStore } from "../../store";
 import { useSoundStore } from "../../store";
 import { Audio } from "expo-av";
-import {
-  desert,
-  field,
-  mountains,
-  snow,
-  swamp,
-  space,
-} from "../../data/images";
+import { sceneObj } from "../../data/images";
 import {
   desertA,
   fieldA,
@@ -26,15 +19,6 @@ const SceneView = ({ navigation }) => {
   const { theme } = useThemeStore();
   const setSound = useSoundStore((state) => state.setSound);
   const { sound } = useSoundStore();
-
-  const sceneObj = {
-    desert: desert,
-    field: field,
-    mountains: mountains,
-    snow: snow,
-    space: space,
-    swamp: swamp,
-  };
 
   const audioObj = {
     desert: desertA,

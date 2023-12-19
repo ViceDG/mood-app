@@ -1,32 +1,20 @@
 [
   {
-    "name": "desert",
-    "image": "../../assets/public/images/scenery/desert.jpeg",
-    "audio": "../../assets/public/audio/desert.wma"
+    "name": "desert"
   },
   {
-    "name": "field",
-    "image": "../../assets/public/images/scenery/field.jpeg",
-    "audio": "../../assets/public/audio/desert.wav"
+    "name": "field"
   },
   {
-    "name": "mountains",
-    "image": "../../assets/public/images/scenery/mountains.jpeg",
-    "audio": "../../assets/public/audio/desert.wav"
+    "name": "mountains"
   },
   {
-    "name": "snow",
-    "image": "../../assets/public/images/scenery/snow.jpeg",
-    "audio": "../../assets/public/audio/desert.wma"
+    "name": "snow"
   },
   {
-    "name": "swamp",
-    "image": "../../assets/public/images/scenery/swamp.jpeg",
-    "audio": "../../assets/public/audio/desert.wma"
+    "name": "swamp"
   },
   {
-    "name": "space",
-    "image": "../../assets/public/images/scenery/space.jpg",
-    "audio": "../../assets/public/audio/space.wma"
+    "name": "space"
   }
 ]

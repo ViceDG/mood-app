@@ -8,27 +8,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 import themes from "../../data/themes.json";
-import {
-  desert,
-  field,
-  mountains,
-  snow,
-  swamp,
-  space,
-} from "../../data/images";
+import { sceneObj } from "../../data/images";
 import sceneSelectStyles from "./SceneSelect.styles";
 import { useThemeStore } from "../../store";
 
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
-  const sceneObj = {
-    desert: desert,
-    field: field,
-    mountains: mountains,
-    snow: snow,
-    space: space,
-    swamp: swamp,
-  };
 
   const handleClick = (data) => {
     setTheme(data);
