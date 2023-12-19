@@ -1,19 +1,17 @@
 {
   "expo": {
-    "name": "vdgNativeSkelly",
-    "slug": "vdgNativeSkelly",
+    "name": "mood-app",
+    "slug": "mood-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/mainLogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
