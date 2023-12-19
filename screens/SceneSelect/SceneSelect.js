@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, Button, FlatList, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Button,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import themes from "../../data/themes.json";
 import {
   desert,
@@ -10,8 +17,11 @@ import {
   space,
 } from "../../data/images";
 import sceneSelectStyles from "./SceneSelect.styles";
+import { useThemeStore } from "../../store";
 
 const SceneSelect = ({ navigation }) => {
+  const setTheme = useThemeStore((state) => state.setTheme);
+  const { theme } = useThemeStore();
   const sceneObj = {
     desert: desert,
     field: field,
@@ -22,13 +32,14 @@ const SceneSelect = ({ navigation }) => {
   };
 
   const handleClick = (data) => {
-    // setTheme(data);
-    console.log(data + ' clicked');
+    setTheme(data);
+    navigation.navigate("SceneView")
+    console.log(theme);
   };
 
   return (
     <View style={sceneSelectStyles.selectContainer}>
-      <Text>Select your scene</Text>
+      <Text style={sceneSelectStyles.headerText}>SELECT A SCENE</Text>
       <FlatList
         data={themes}
         numColumns={3}
