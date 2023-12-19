@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 let themeStore = (set) => ({
   theme: "desert",
@@ -13,3 +13,15 @@ themeStore = persist(themeStore, {
   storage: createJSONStorage(() => AsyncStorage),
 });
 export const useThemeStore = create(themeStore);
+
+let soundStore = (set) => ({
+  audio: {},
+  setSound: (currentSound) =>
+    set((state) => ({ ...state, sound: currentSound })),
+});
+
+soundStore = persist(soundStore, {
+  name: "sound",
+  storage: createJSONStorage(() => AsyncStorage),
+});
+export const useSoundStore = create(soundStore);

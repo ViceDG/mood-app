@@ -21,20 +21,18 @@ import { useThemeStore } from "../../store";
 
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
-  const { theme } = useThemeStore();
   const sceneObj = {
     desert: desert,
     field: field,
     mountains: mountains,
     snow: snow,
-    swamp: swamp,
     space: space,
+    swamp: swamp,
   };
 
   const handleClick = (data) => {
     setTheme(data);
-    navigation.navigate("SceneView")
-    console.log(theme);
+    navigation.navigate("SceneView");
   };
 
   return (
