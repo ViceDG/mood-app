@@ -23,5 +23,10 @@
     "name": "swamp",
     "image": "../../assets/public/images/scenery/swamp.jpeg",
     "audio": "../../assets/public/audio/desert.wma"
+  },
+  {
+    "name": "space",
+    "image": "../../assets/public/images/scenery/space.jpg",
+    "audio": "../../assets/public/audio/space.wma"
   }
 ]

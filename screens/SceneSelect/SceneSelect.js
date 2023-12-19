@@ -1,7 +1,15 @@
 import React from "react";
-import { View, Text, Button, FlatList, Image } from "react-native";
+import { View, Text, Button, FlatList, Image, TouchableOpacity } from "react-native";
 import themes from "../../data/themes.json";
-import { desert, field, mountains, snow, swamp } from "../../data/images";
+import {
+  desert,
+  field,
+  mountains,
+  snow,
+  swamp,
+  space,
+} from "../../data/images";
+import sceneSelectStyles from "./SceneSelect.styles";
 
 const SceneSelect = ({ navigation }) => {
   const sceneObj = {
@@ -10,19 +18,34 @@ const SceneSelect = ({ navigation }) => {
     mountains: mountains,
     snow: snow,
     swamp: swamp,
+    space: space,
+  };
+
+  const handleClick = (data) => {
+    // setTheme(data);
+    console.log(data + ' clicked');
   };
 
   return (
-    <View>
+    <View style={sceneSelectStyles.selectContainer}>
       <Text>Select your scene</Text>
       <FlatList
         data={themes}
+        numColumns={3}
         renderItem={({ item, index }) => (
-          <View key={index}>
-            <Image source={sceneObj[item.name]} />
-            <Text>{item.name}</Text>
-            <Button title="Select">Select</Button>
-          </View>
+          <TouchableOpacity
+            key={index}
+            style={sceneSelectStyles.selectItem}
+            onPress={() => handleClick(item.name)}
+          >
+            <Image
+              source={sceneObj[item.name]}
+              style={sceneSelectStyles.selectImage}
+            />
+            <Text style={sceneSelectStyles.selectButton}>
+              {item.name.toUpperCase()}
+            </Text>
+          </TouchableOpacity>
         )}
       />
       <Button title="Back" onPress={() => navigation.navigate("Home")} />

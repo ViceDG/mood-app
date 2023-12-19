@@ -9,23 +9,12 @@ import { useState } from "react";
 const Stack = createStackNavigator();
 
 const MyStack = () => {
-  const [theme, setTheme] = useState("desert");
 
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen
-        name="SceneSelect"
-        component={SceneSelect}
-        theme={theme}
-        setTheme={setTheme}
-      />
-      <Stack.Screen
-        name="SceneView"
-        component={SceneView}
-        theme={theme}
-        setTheme={setTheme}
-      />
+      <Stack.Screen name="SceneSelect" component={SceneSelect} />
+      <Stack.Screen name="SceneView" component={SceneView} />
     </Stack.Navigator>
   );
 };
