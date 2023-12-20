@@ -16,6 +16,7 @@ const sceneSelectStyles = StyleSheet.create({
   },
   selectContainer: {
     flex: 1,
+    paddingTop: 20,
     flexDirection: "column",
     justifyContent: "center",
     backgroundColor: "#101010",
