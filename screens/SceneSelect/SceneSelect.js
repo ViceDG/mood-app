@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import themes from "../../data/themes.json";
-import { sceneObj } from "../../data/images";
 import sceneSelectStyles from "./SceneSelect.styles";
+import { sceneObj } from "../../data/images";
 import { useThemeStore } from "../../store";
 
 const SceneSelect = ({ navigation }) => {

@@ -1,13 +1,13 @@
-import React from "react";
-import { Video, ResizeMode } from "expo-av";
+import { useState, useCallback, useRef } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import homeScreenStyles from "./HomeScreen.styles";
+import { Video, ResizeMode } from "expo-av";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect, useState, useCallback } from "react";
+import { videoObj } from "../../data/videos";
 
 const HomeScreen = ({ navigation }) => {
-  const video = React.useRef(null);
+  const video = useRef(null);
   const [status, setStatus] = useState({});
   const [fontsLoaded] = useFonts({
     "Baloo-Bhaijaan2": require("../../assets/public/fonts/BalooBhaijaan2-Bold.ttf"),
@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
       <Video
         ref={video}
         style={homeScreenStyles.video}
-        source={require("../../assets/public/video/mainScreenVideo.mp4")}
+        source={videoObj.home}
         resizeMode={ResizeMode.COVER}
         isMuted
         shouldPlay={true}
