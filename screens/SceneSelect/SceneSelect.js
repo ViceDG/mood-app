@@ -25,6 +25,7 @@ const SceneSelect = ({ navigation }) => {
       <Text style={sceneSelectStyles.headerText}>SELECT A SCENE</Text>
       <FlatList
         data={themes}
+        contentContainerStyle={sceneSelectStyles.selectList}
         numColumns={3}
         renderItem={({ item, index }) => (
           <TouchableOpacity

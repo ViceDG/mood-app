@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { View, Text, Button, ImageBackground } from "react-native";
 import { useThemeStore } from "../../store";
 import { useSoundStore } from "../../store";
@@ -17,8 +17,9 @@ import sceneViewStyles from "./SceneView.styles";
 
 const SceneView = ({ navigation }) => {
   const { theme } = useThemeStore();
-  const setSound = useSoundStore((state) => state.setSound);
-  const { sound } = useSoundStore();
+  const [sound, setSound] = useState();
+  // const setSound = useSoundStore((state) => state.setSound);
+  // const { sound } = useSoundStore();
 
   const audioObj = {
     desert: desertA,

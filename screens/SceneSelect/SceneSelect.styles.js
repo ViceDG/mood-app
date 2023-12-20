@@ -35,6 +35,11 @@ const sceneSelectStyles = StyleSheet.create({
     width: 100,
     borderRadius: 20,
   },
+  selectList: {
+    flexGrow: 1,
+    justifyContent: "center",
+    alignSelf: "center",
+  },
 });
 
 export default sceneSelectStyles;
