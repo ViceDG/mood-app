@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { withSafeAreaInsets } from "react-native-safe-area-context";
 
+
 const homeScreenStyles = StyleSheet.create({
   videoView: {
     justifyContent: "center",
@@ -29,7 +30,7 @@ const homeScreenStyles = StyleSheet.create({
   textView: {
     width: "100%",
     height: "30%",
-    backgroundColor: "green",
+    backgroundColor: "#f2e5c8",
     color: "red",
     fontWeight: "bold",
   },
@@ -37,10 +38,14 @@ const homeScreenStyles = StyleSheet.create({
   text1: {
     textAlign: "center",
     paddingTop: 35,
+    color: 'black',
   },
   text2: {
     textAlign: "center",
     paddingTop: 20,
+    color: 'black',
+    width: '25%',
+    marginLeft: '37%',
   },
 });
 

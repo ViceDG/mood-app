@@ -21,8 +21,7 @@ const MyStack = () => {
       screenOptions={{
         headerStyle: {
           display: 'none',
-          height: 0,
-          position: 'fixed',
+          height: 0
         },
         headerTintColor: "#fff",
         headerTitleStyle: {
