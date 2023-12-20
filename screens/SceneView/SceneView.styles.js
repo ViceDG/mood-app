@@ -8,6 +8,12 @@ const sceneViewStyles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  video: {
+    alignSelf: "center",
+
+    height: "100%",
+    width: "100%",
+  },
   text: {
     color: 'white',
     fontSize: 42,
