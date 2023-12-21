@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { withSafeAreaInsets } from "react-native-safe-area-context";
 
 const sceneSelectStyles = StyleSheet.create({
   headerText: {
@@ -14,31 +15,55 @@ const sceneSelectStyles = StyleSheet.create({
     width: "100%",
     
   },
+  selectDescription:{
+   color: 'black', 
+   flex: 2,
+  },
   selectImage: {
-    borderRadius: 15,
+    borderRadius: 25,
     width: 100,
     height: 100,
     marginBottom: 5,
   },
   selectContainer: {
     flex: 1,
-    paddingTop: 20,
+    paddingTop: 5,
     flexDirection: "column",
     justifyContent: "center",
     backgroundColor: "#101010",
   },
   selectItem: {
     alignItems: "center",
-    margin: 20,
+    flexDirection: 'row',
+    margin: 5,
+    backgroundColor:"rgba(243, 220, 170, .7) ",
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 5,
+  },
+  itemContainer:{
+    paddingLeft: 10,
+    padding: 5,
+    height: '100%'
+  },
+  selectCredit:{
+    backgroundColor: '#E34234',
+    color:'white',
+    textAlign: 'center',
+    width: '50%',
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
   },
   selectButton: {
-    flex: 1,
-    justifyContent: "center",
-    color: "white",
-    backgroundColor: "gray",
-    textAlign: "center",
+    color: "black",
     fontWeight: "bold",
-    paddingVertical: 10,
+    paddingVertical: 5,
     width: 100,
     borderRadius: 10,
   },

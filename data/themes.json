@@ -1,20 +1,32 @@
 [
   {
-    "name": "desert"
+    "name": "desert",
+    "description":"This will be a description for specified scene",
+    "credit":"Jazz"
   },
   {
-    "name": "field"
+    "name": "field",
+    "description":"This will be a description for specified scene",
+    "credit":"Lo-fi"
   },
   {
-    "name": "mountains"
+    "name": "mountains",
+    "description":"This will be a description for specified scene",
+    "credit":"Ambient"
   },
   {
-    "name": "snow"
+    "name": "snow",
+    "description":"This will be a description for specified scene",
+    "credit":"Jazz"
   },
   {
-    "name": "swamp"
+    "name": "swamp",
+    "description":"This will be a description for specified scene",
+    "credit":"Ambient"
   },
   {
-    "name": "space"
+    "name": "space",
+    "description":"This will be a description for specified scene",
+    "credit":"Soul"
   }
 ]
