@@ -28,7 +28,7 @@ const HomeScreen = ({ navigation }) => {
       <Text
         style={{ ...homeScreenStyles.AppTitle, fontFamily: "Baloo-Bhaijaan2" }}
       >
-        Mood App
+        Zen Portal
       </Text>
       <Video
         ref={video}
@@ -41,17 +41,22 @@ const HomeScreen = ({ navigation }) => {
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}
       />
       <View style={homeScreenStyles.textView}>
-        <TouchableOpacity onPress={() => navigation.navigate("SceneSelect")}>
+        <TouchableOpacity
+          style={homeScreenStyles.opacityView}
+          onPress={() => navigation.navigate("SceneSelect")}
+        >
           <Text
-            style={{ ...homeScreenStyles.text1, fontFamily: "Baloo-Bhaijaan2" }}
+            style={{ ...homeScreenStyles.text1, }}
           >
-            Welcome to Mood App!
+            Relaxation in an app
           </Text>
+          <View  style={homeScreenStyles.button}>
           <Text
-            style={{ ...homeScreenStyles.text2, fontFamily: "Baloo-Bhaijaan2" }}
+            style={{ ...homeScreenStyles.text2 }}
           >
             Get Started
           </Text>
+          </View>
         </TouchableOpacity>
       </View>
     </View>

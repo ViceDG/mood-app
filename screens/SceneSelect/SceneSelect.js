@@ -11,6 +11,8 @@ import themes from "../../data/themes.json";
 import sceneSelectStyles from "./SceneSelect.styles";
 import { sceneObj } from "../../data/images";
 import { useThemeStore } from "../../store";
+import { ImageBackground } from "react-native-web";
+import backgroundImage from "../../assets/public/images/sceneSelectBG.png"
 
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
@@ -19,9 +21,10 @@ const SceneSelect = ({ navigation }) => {
     setTheme(data);
     navigation.navigate("SceneView");
   };
-
+  
   return (
     <View style={sceneSelectStyles.selectContainer}>
+      <ImageBackground source={backgroundImage} style={sceneSelectStyles.bgImage} resizeMode="cover">
       <Text style={sceneSelectStyles.headerText}>SELECT A SCENE</Text>
       <FlatList
         data={themes}
@@ -44,6 +47,7 @@ const SceneSelect = ({ navigation }) => {
         )}
       />
       <Button title="Back" onPress={() => navigation.navigate("Home")} />
+      </ImageBackground>
     </View>
   );
 };

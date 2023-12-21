@@ -2,14 +2,20 @@ import { StyleSheet } from "react-native";
 
 const sceneSelectStyles = StyleSheet.create({
   headerText: {
-    color: "white",
+    color: "black",
     fontWeight: "bold",
-    paddingTop: 20,
+    paddingTop: 50,
     fontSize: 20,
     textAlign: "center",
+    backgroundColor: 'rgba(242, 229, 200, .9)'
+  },
+  bgImage:{
+    height: "100%",
+    width: "100%",
+    
   },
   selectImage: {
-    borderRadius: 50,
+    borderRadius: 15,
     width: 100,
     height: 100,
     marginBottom: 5,
@@ -34,12 +40,15 @@ const sceneSelectStyles = StyleSheet.create({
     fontWeight: "bold",
     paddingVertical: 10,
     width: 100,
-    borderRadius: 20,
+    borderRadius: 10,
   },
   selectList: {
     flexGrow: 1,
+    height: '100%',
+    width:'100%',
     justifyContent: "center",
     alignSelf: "center",
+    backgroundColor: 'rgba(242, 229, 200, .9)'
   },
 });
 

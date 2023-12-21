@@ -12,40 +12,60 @@ const homeScreenStyles = StyleSheet.create({
   },
   video: {
     alignSelf: "center",
-
+    zIndex: 1,
     height: "100%",
     width: "100%",
+
   },
   image: {
     flex: 1,
     justifyContent: "center",
   },
   AppTitle: {
-    color: "white",
-    fontSize: 30,
+    color: "#f2e5c8",
+    fontSize: 70,
     height: "20%",
     position: "absolute",
-    zIndex: 1,
+    zIndex: 3,
   },
   textView: {
     width: "100%",
-    height: "30%",
-    backgroundColor: "#f2e5c8",
-    color: "red",
-    fontWeight: "bold",
+    top: 730,
+    backgroundColor: "transparent",
+    flexDirection: 'column',
+    position: "absolute",
+    zIndex: 2,
   },
+  opacityView: {
+    backgroundColor: "transparent"
+  },
+  button: {
+    backgroundColor: "#f2e5c8",
+    width: '90%',
+    marginLeft: '5%',
+    margin: 'auto',
+    marginTop: '10%',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+  }
+  ,
 
   text1: {
     textAlign: "center",
-    paddingTop: 35,
-    color: 'black',
+    paddingTop: 15,
+    color: '#f2e5c8',
+    fontSize: 15,
+    fontWeight: "bold"
   },
   text2: {
     textAlign: "center",
-    paddingTop: 20,
+    padding: 8,
     color: 'black',
-    width: '25%',
-    marginLeft: '37%',
+    margin: 'auto',
+    fontSize: 15,
+    fontWeight: "bold"
   },
 });
 
