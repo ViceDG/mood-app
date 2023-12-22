@@ -2,18 +2,16 @@ import React from "react";
 import {
   View,
   Text,
-  Button,
   FlatList,
   Image,
   TouchableOpacity,
+  ImageBackground,
 } from "react-native";
 import themes from "../../data/themes.json";
 import sceneSelectStyles from "./SceneSelect.styles";
 import { sceneObj } from "../../data/images";
 import { useThemeStore } from "../../store";
-import { ImageBackground } from "react-native";
-import { useFonts } from "expo-font";
-import backgroundImage from "../../assets/public/images/sceneSelectBG.png";
+import { A } from "@expo/html-elements";
 
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
@@ -26,7 +24,7 @@ const SceneSelect = ({ navigation }) => {
   return (
     <View style={sceneSelectStyles.selectContainer}>
       <ImageBackground
-        source={require('../../assets/public/images/sceneSelectBG.png')}
+        source={require("../../assets/public/images/sceneSelectBG.png")}
         style={sceneSelectStyles.bgImage}
         resizeMode="cover"
       >
@@ -59,14 +57,15 @@ const SceneSelect = ({ navigation }) => {
                 <Text style={sceneSelectStyles.selectDescription}>
                   {item.description}
                 </Text>
-                <Text style={sceneSelectStyles.selectCredit}>
-                  Credit: {item.credit}
-                </Text>
+                <A style={sceneSelectStyles.selectCredit} href={item.creditLink}>
+                    Credit: {item.credit}
+                </A>
               </View>
             </TouchableOpacity>
           )}
         />
-        <TouchableOpacity style={sceneSelectStyles.infoButton}
+        <TouchableOpacity
+          style={sceneSelectStyles.infoButton}
           title="Back"
           onPress={() => navigation.navigate("Home")}
         >

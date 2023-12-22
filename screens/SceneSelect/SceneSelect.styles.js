@@ -53,9 +53,10 @@ const sceneSelectStyles = StyleSheet.create({
     backgroundColor: "#E34234",
     color: "white",
     textAlign: "center",
-    width: "50%",
+    width: "75%",
+    height: 20,
     borderRadius: 10,
-    overflow: 'hidden'
+    overflow: "hidden",
   },
   selectButton: {
     color: "black",
@@ -71,9 +72,9 @@ const sceneSelectStyles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: "rgba(242, 229, 200, .9)",
   },
-  infoButton:{
+  infoButton: {
     borderColor: "#E34234",
-    position: 'absolute',
+    position: "absolute",
     borderWidth: 2,
     zIndex: 3,
     padding: 5,
@@ -81,13 +82,13 @@ const sceneSelectStyles = StyleSheet.create({
     borderRadius: 50,
     left: 370,
     fontSize: 15,
-    top: 50
+    top: 50,
   },
-  infoText:{
+  infoText: {
     color: "#E34234",
-    textAlign: 'center',
-    fontWeight: 'bold'
-  }
+    textAlign: "center",
+    fontWeight: "bold",
+  },
 });
 
 export default sceneSelectStyles;
