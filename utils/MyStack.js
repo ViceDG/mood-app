@@ -14,6 +14,9 @@ const MyStack = () => {
         headerStyle: {
           height: 0,
         },
+        headerTitle:null,
+         headerTransparent:true,
+         headerLeft: null,
         headerTintColor: "#fff",
         headerTitleStyle: {
           fontWeight: "bold",

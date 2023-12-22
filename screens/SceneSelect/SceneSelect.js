@@ -13,7 +13,7 @@ import { sceneObj } from "../../data/images";
 import { useThemeStore } from "../../store";
 import { ImageBackground } from "react-native-web";
 import { useFonts } from "expo-font";
-import backgroundImage from "../../assets/public/images/sceneSelectBG.png";
+// import backgroundImage from "../../assets/public/images/sceneSelectBG.png";
 
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
@@ -23,17 +23,21 @@ const SceneSelect = ({ navigation }) => {
     navigation.navigate("SceneView");
   };
 
-
-
-
   return (
     <View style={sceneSelectStyles.selectContainer}>
       <ImageBackground
-        source={backgroundImage}
+        source={require('../../assets/public/images/sceneSelectBG.png')}
         style={sceneSelectStyles.bgImage}
         resizeMode="cover"
       >
-        <Text style={{...sceneSelectStyles.headerText, fontFamily: "Baloo-Bhaijaan2" }}>SELECT A SCENE</Text>
+        <Text
+          style={{
+            ...sceneSelectStyles.headerText,
+            fontFamily: "Baloo-Bhaijaan2",
+          }}
+        >
+          SELECT A SCENE
+        </Text>
         <FlatList
           data={themes}
           contentContainerStyle={sceneSelectStyles.selectList}
@@ -62,7 +66,14 @@ const SceneSelect = ({ navigation }) => {
             </TouchableOpacity>
           )}
         />
-        <Button title="Back" onPress={() => navigation.navigate("Home")} />
+        <TouchableOpacity style={sceneSelectStyles.infoButton}
+          title="Back"
+          onPress={() => navigation.navigate("Home")}
+        >
+          <View>
+            <Text style={sceneSelectStyles.infoText}>i</Text>
+          </View>
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );

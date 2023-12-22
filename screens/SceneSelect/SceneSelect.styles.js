@@ -8,16 +8,15 @@ const sceneSelectStyles = StyleSheet.create({
     paddingTop: 50,
     fontSize: 20,
     textAlign: "center",
-    backgroundColor: 'rgba(242, 229, 200, .9)'
+    backgroundColor: "rgba(242, 229, 200, .9)",
   },
-  bgImage:{
+  bgImage: {
     height: "100%",
     width: "100%",
-    
   },
-  selectDescription:{
-   color: 'black', 
-   flex: 2,
+  selectDescription: {
+    color: "black",
+    flex: 2,
   },
   selectImage: {
     borderRadius: 25,
@@ -34,9 +33,9 @@ const sceneSelectStyles = StyleSheet.create({
   },
   selectItem: {
     alignItems: "center",
-    flexDirection: 'row',
+    flexDirection: "row",
     margin: 5,
-    backgroundColor:"rgba(243, 220, 170, .7) ",
+    backgroundColor: "rgba(243, 220, 170, .7) ",
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderTopRightRadius: 10,
@@ -45,16 +44,16 @@ const sceneSelectStyles = StyleSheet.create({
     paddingBottom: 10,
     paddingLeft: 5,
   },
-  itemContainer:{
+  itemContainer: {
     paddingLeft: 10,
     padding: 5,
-    height: '100%'
+    height: "100%",
   },
-  selectCredit:{
-    backgroundColor: '#E34234',
-    color:'white',
-    textAlign: 'center',
-    width: '50%',
+  selectCredit: {
+    backgroundColor: "#E34234",
+    color: "white",
+    textAlign: "center",
+    width: "50%",
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderTopRightRadius: 10,
@@ -69,12 +68,28 @@ const sceneSelectStyles = StyleSheet.create({
   },
   selectList: {
     flexGrow: 1,
-    height: '100%',
-    width:'100%',
+    width: "100%",
     justifyContent: "center",
     alignSelf: "center",
-    backgroundColor: 'rgba(242, 229, 200, .9)'
+    backgroundColor: "rgba(242, 229, 200, .9)",
   },
+  infoButton:{
+    borderColor: "#E34234",
+    position: 'absolute',
+    borderWidth: 2,
+    zIndex: 3,
+    padding: 5,
+    paddingHorizontal: 15,
+    borderRadius: 50,
+    left: 370,
+    fontSize: 15,
+    top: 25
+  },
+  infoText:{
+    color: "#E34234",
+    textAlign: 'center',
+    fontWeight: 'bold'
+  }
 });
 
 export default sceneSelectStyles;
