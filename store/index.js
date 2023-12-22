@@ -13,15 +13,3 @@ themeStore = persist(themeStore, {
   storage: createJSONStorage(() => AsyncStorage),
 });
 export const useThemeStore = create(themeStore);
-
-let soundStore = (set) => ({
-  audio: {},
-  setSound: (currentSound) =>
-    set((state) => ({ ...state, sound: currentSound })),
-});
-
-soundStore = persist(soundStore, {
-  name: "sound",
-  storage: createJSONStorage(() => AsyncStorage),
-});
-export const useSoundStore = create(soundStore);

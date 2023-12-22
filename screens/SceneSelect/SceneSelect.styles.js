@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { withSafeAreaInsets } from "react-native-safe-area-context";
 
 const sceneSelectStyles = StyleSheet.create({
   headerText: {

@@ -24,7 +24,7 @@ const SceneSelect = ({ navigation }) => {
   return (
     <View style={sceneSelectStyles.selectContainer}>
       <ImageBackground
-        source={require("../../assets/public/images/sceneSelectBG.png")}
+        source={sceneObj.background}
         style={sceneSelectStyles.bgImage}
         resizeMode="cover"
       >
@@ -57,8 +57,11 @@ const SceneSelect = ({ navigation }) => {
                 <Text style={sceneSelectStyles.selectDescription}>
                   {item.description}
                 </Text>
-                <A style={sceneSelectStyles.selectCredit} href={item.creditLink}>
-                    Credit: {item.credit}
+                <A
+                  style={sceneSelectStyles.selectCredit}
+                  href={item.creditLink}
+                >
+                  Credit: {item.credit}
                 </A>
               </View>
             </TouchableOpacity>

@@ -1,6 +1,4 @@
 import { StyleSheet } from "react-native";
-import { withSafeAreaInsets } from "react-native-safe-area-context";
-
 
 const homeScreenStyles = StyleSheet.create({
   videoView: {
@@ -15,7 +13,6 @@ const homeScreenStyles = StyleSheet.create({
     zIndex: 1,
     height: "100%",
     width: "100%",
-
   },
   image: {
     flex: 1,
@@ -32,40 +29,38 @@ const homeScreenStyles = StyleSheet.create({
     width: "100%",
     top: 730,
     backgroundColor: "transparent",
-    flexDirection: 'column',
+    flexDirection: "column",
     position: "absolute",
     zIndex: 2,
   },
   opacityView: {
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
   },
   button: {
     backgroundColor: "#f2e5c8",
-    width: '90%',
-    marginLeft: '5%',
-    margin: 'auto',
-    marginTop: '10%',
+    width: "90%",
+    marginLeft: "5%",
+    margin: "auto",
+    marginTop: "10%",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-  }
-  ,
-
+  },
   text1: {
     textAlign: "center",
     paddingTop: 15,
-    color: '#f2e5c8',
+    color: "#f2e5c8",
     fontSize: 15,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   text2: {
     textAlign: "center",
     padding: 8,
-    color: 'black',
-    margin: 'auto',
+    color: "black",
+    margin: "auto",
     fontSize: 15,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
 });
 

@@ -1,9 +1,8 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { View, Text, Button, ImageBackground } from "react-native";
+import { View, Text, ImageBackground } from "react-native";
 import { Audio, Video, ResizeMode } from "expo-av";
 import { useThemeStore } from "../../store";
-import { useSoundStore } from "../../store";
 import { videoObj } from "../../data/videos";
 import { sceneObj } from "../../data/images";
 import {
@@ -20,9 +19,6 @@ const SceneView = ({ navigation }) => {
   const { theme } = useThemeStore();
   const [sound, setSound] = useState();
   const video = useRef(null);
-  const [status, setStatus] = useState({});
-  // const setSound = useSoundStore((state) => state.setSound);
-  // const { sound } = useSoundStore();
 
   const audioObj = {
     desert: desertA,
@@ -38,7 +34,7 @@ const SceneView = ({ navigation }) => {
     const { sound } = await Audio.Sound.createAsync(audioObj[theme]);
     setSound(sound);
     console.log("Playing Sound");
-    await sound.setIsLoopingAsync(true)
+    await sound.setIsLoopingAsync(true);
     await sound.playAsync();
   };
 

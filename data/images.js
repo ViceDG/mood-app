@@ -5,6 +5,7 @@ const sceneObj = {
   snow: require("../assets/public/images/scenery/snow.jpeg"),
   space: require("../assets/public/images/scenery/space.jpg"),
   swamp: require("../assets/public/images/scenery/swamp.jpeg"),
+  background: require("../assets/public/images/sceneSelectBG.png"),
 };
 
 export { sceneObj };
