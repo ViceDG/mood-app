@@ -54,10 +54,8 @@ const sceneSelectStyles = StyleSheet.create({
     color: "white",
     textAlign: "center",
     width: "50%",
-    borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10,
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
+    borderRadius: 10,
+    overflow: 'hidden'
   },
   selectButton: {
     color: "black",
@@ -83,7 +81,7 @@ const sceneSelectStyles = StyleSheet.create({
     borderRadius: 50,
     left: 370,
     fontSize: 15,
-    top: 25
+    top: 50
   },
   infoText:{
     color: "#E34234",

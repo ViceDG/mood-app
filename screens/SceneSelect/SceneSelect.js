@@ -11,9 +11,9 @@ import themes from "../../data/themes.json";
 import sceneSelectStyles from "./SceneSelect.styles";
 import { sceneObj } from "../../data/images";
 import { useThemeStore } from "../../store";
-import { ImageBackground } from "react-native-web";
+import { ImageBackground } from "react-native";
 import { useFonts } from "expo-font";
-// import backgroundImage from "../../assets/public/images/sceneSelectBG.png";
+import backgroundImage from "../../assets/public/images/sceneSelectBG.png";
 
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
