@@ -6,6 +6,7 @@ import { useThemeStore } from "../../store";
 import { useSoundStore } from "../../store";
 import { videoObj } from "../../data/videos";
 import { sceneObj } from "../../data/images";
+import Stopwatch from "../../utils/Stopwatch/Stopwatch";
 import {
   desertA,
   fieldA,
@@ -57,6 +58,7 @@ const SceneView = ({ navigation }) => {
 
   return (
     <View style={sceneViewStyles.container}>
+      <Stopwatch/>
       <Video
         ref={video}
         style={sceneViewStyles.video}
