@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-
+import Ionicons from "@expo/vector-icons/Ionicons";
 import stopwatchStyles from "./Stopwatch.styles";
-
+import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { Fontisto } from "@expo/vector-icons";
 const Stopwatch = ({ displayTimer }) => {
   const [start, setStart] = useState(false);
   const [count, setCount] = useState(0);
@@ -53,37 +55,67 @@ const Stopwatch = ({ displayTimer }) => {
       </Text>
       <View style={stopwatchStyles.buttonContainer}>
         <TouchableOpacity onPress={clearTime}>
-          <Text
+          {/* <Text
             style={{
               ...stopwatchStyles.clearButton,
               fontFamily: "Baloo-Bhaijaan2",
             }}
           >
             Clear
-          </Text>
+          </Text> */}
+
+          <Fontisto
+            name="undo"
+            size={50}
+            color="rgba(255, 255, 255, 0.47)"
+            style={{
+              ...stopwatchStyles.clearButton,
+            }}
+          />
         </TouchableOpacity>
 
         {start ? (
           <TouchableOpacity onPress={() => setStart(false)}>
-            <Text
+            {/* <Text
               style={{
                 ...stopwatchStyles.stopButton,
                 fontFamily: "Baloo-Bhaijaan2",
               }}
             >
               Stop
-            </Text>
+            </Text> */}
+
+            <FontAwesome
+              name="stop"
+              size={60}
+              color="rgba(255, 7, 15, 0.51)"
+              style={{
+                ...stopwatchStyles.stopButton,
+              }}
+            />
           </TouchableOpacity>
         ) : (
-          <TouchableOpacity className="button" onPress={() => setStart(true)}>
-            <Text
+          <TouchableOpacity
+            style={{ height: "auto" }}
+            className="button"
+            onPress={() => setStart(true)}
+          >
+            {/* <Text
               style={{
                 ...stopwatchStyles.startButton,
                 fontFamily: "Baloo-Bhaijaan2",
               }}
             >
               Start
-            </Text>
+            </Text> */}
+            <FontAwesome5
+              name="play"
+              size={60}
+              color="rgba(0, 162, 68, 0.64)"
+              style={{
+                ...stopwatchStyles.startButton,
+              }}
+            />
           </TouchableOpacity>
         )}
       </View>

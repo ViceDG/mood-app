@@ -12,6 +12,9 @@ import { useThemeStore } from "../../store";
 import { videoObj } from "../../data/videos";
 import { sceneObj } from "../../data/images";
 import Stopwatch from "../../components/Stopwatch/Stopwatch";
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+
 import {
   desertA,
   fieldA,
