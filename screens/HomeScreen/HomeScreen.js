@@ -45,17 +45,11 @@ const HomeScreen = ({ navigation }) => {
           style={homeScreenStyles.opacityView}
           onPress={() => navigation.navigate("SceneSelect")}
         >
-          <Text
-            style={{ ...homeScreenStyles.text1, }}
-          >
+          <Text style={{ ...homeScreenStyles.text1 }}>
             Relaxation in an app
           </Text>
-          <View  style={homeScreenStyles.button}>
-          <Text
-            style={{ ...homeScreenStyles.text2 }}
-          >
-            Get Started
-          </Text>
+          <View style={homeScreenStyles.button}>
+            <Text style={{ ...homeScreenStyles.text2 }}>Get Started</Text>
           </View>
         </TouchableOpacity>
       </View>

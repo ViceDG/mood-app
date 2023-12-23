@@ -1,9 +1,8 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { View, Text, Button, ImageBackground } from "react-native";
+import { View, Text, ImageBackground, Image, TouchableOpacity } from "react-native";
 import { Audio, Video, ResizeMode } from "expo-av";
 import { useThemeStore } from "../../store";
-import { useSoundStore } from "../../store";
 import { videoObj } from "../../data/videos";
 import { sceneObj } from "../../data/images";
 import Stopwatch from "../../utils/Stopwatch/Stopwatch";
@@ -17,13 +16,12 @@ import {
 } from "../../data/audio";
 import sceneViewStyles from "./SceneView.styles";
 
+
 const SceneView = ({ navigation }) => {
   const { theme } = useThemeStore();
   const [sound, setSound] = useState();
   const video = useRef(null);
-  const [status, setStatus] = useState({});
-  // const setSound = useSoundStore((state) => state.setSound);
-  // const { sound } = useSoundStore();
+  const [showTimer, setShowTimer] = useState(false);
 
   const audioObj = {
     desert: desertA,
@@ -39,13 +37,14 @@ const SceneView = ({ navigation }) => {
     const { sound } = await Audio.Sound.createAsync(audioObj[theme]);
     setSound(sound);
     console.log("Playing Sound");
-    await sound.setIsLoopingAsync(true)
+    await sound.setIsLoopingAsync(true);
     await sound.playAsync();
   };
 
   useEffect(() => {
     playSound();
   }, []);
+
 
   useEffect(() => {
     return sound
@@ -58,7 +57,9 @@ const SceneView = ({ navigation }) => {
 
   return (
     <View style={sceneViewStyles.container}>
-      <Stopwatch/>
+      {showTimer ?
+      <Stopwatch />
+      : null }
       <Video
         ref={video}
         style={sceneViewStyles.video}
@@ -68,13 +69,12 @@ const SceneView = ({ navigation }) => {
         shouldPlay={true}
         isLooping
       />
-      {/* <ImageBackground
-        source={sceneObj[theme]}
-        resizeMode="cover"
-        style={sceneViewStyles.image}
-      >
-        <Text style={sceneViewStyles.text}>Particles</Text>
-      </ImageBackground> */}
+      <TouchableOpacity onPress={() => setShowTimer(!showTimer) } style={sceneViewStyles.swIconContainer} >
+      <Image
+        style={sceneViewStyles.swIcon}
+        source={require("../../assets/public/images/icons/stopwatch.png")}
+      />
+      </TouchableOpacity>
     </View>
   );
 };

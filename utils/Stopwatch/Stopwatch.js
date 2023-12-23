@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useFonts } from "expo-font";
 import {
     View,
     Text,
@@ -13,15 +14,12 @@ import stopwatchStyles from "./Stopwatch.styles";
 export default function Stopwatch() {
   const [start, setStart] = useState(false);
   const [count, setCount] = useState(0);
-  const [time, setTime] = useState("00:00:00");
+  const [time, setTime] = useState("00:00");
   const [timeSetting, setTimeSetting] = useState({ m: 0, s: 0 });
 
   var initTime = new Date();
 
   const showTimer = (ms) => {
-    const milliseconds = Math.floor((ms % 1000) / 10)
-      .toString()
-      .padStart(2, "0");
     const second = Math.floor((ms / 1000) % 60)
       .toString()
       .padStart(2, "0");
@@ -30,12 +28,12 @@ export default function Stopwatch() {
       .padStart(2, "0");
     setTime(
 
-      minute + ":" + second + ":" + milliseconds
+      minute + ":" + second 
     );
   };
 
   const clearTime = () => {
-    setTime("00:00:00");
+    setTime("00:00");
     setCount(0);
   };
 
@@ -48,7 +46,7 @@ export default function Stopwatch() {
       setCount(left);
       showTimer(left);
       if (left <= 0) {
-        setTime("00:00:00:00");
+        setTime("00:00:00");
         clearInterval(id);
       }
     }, 1);
@@ -57,34 +55,26 @@ export default function Stopwatch() {
 
   return (
     <View style={stopwatchStyles.stopwatchContainer}>
-      <Text className="timer">{time}</Text>
+      <Text style={{...stopwatchStyles.time,fontFamily: "Baloo-Bhaijaan2"}}>{time}</Text>
       <View
-        style={{
-          marginTop: "80px",
-          display: "flex",
-          justifyContent: "space-between",
-          width: "300px"
-        }}
+        style={stopwatchStyles.buttonContainer}
       >
         <TouchableOpacity
-          className="button"
-          style={{ backgroundColor: "gray", color: "#fff" }}
+          
           onPress={clearTime}
         >
-          <Text>Clear</Text>
+          <Text style={{...stopwatchStyles.clearButton,fontFamily: "Baloo-Bhaijaan2"}}>Clear</Text>
         </TouchableOpacity>
 
         {start ? (
           <TouchableOpacity
-            className="button"
-            style={{ backgroundColor: "#820000", color: "red" }}
             onPress={() => setStart(false)}
           >
-            <Text>Stop</Text>
+            <Text style={{...stopwatchStyles.stopButton,fontFamily: "Baloo-Bhaijaan2"}}>Stop</Text>
           </TouchableOpacity>
         ) : (
           <TouchableOpacity className="button" onPress={() => setStart(true)}>
-            <Text>Start</Text>
+            <Text style={{...stopwatchStyles.startButton,fontFamily: "Baloo-Bhaijaan2"}}>Start</Text>
           </TouchableOpacity>
         )}
       </View>

@@ -6,7 +6,7 @@ const sceneViewStyles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   video: {
     alignSelf: "center",
@@ -15,13 +15,34 @@ const sceneViewStyles = StyleSheet.create({
     width: "100%",
   },
   text: {
-    color: 'white',
+    color: "white",
     fontSize: 42,
     lineHeight: 84,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    backgroundColor: '#000000c0',
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "#000000c0",
   },
+  swIconContainer:{
+    flex: 1,
+    width: 75,
+    height: 75,
+    resizeMode: 'contain',
+    zIndex: 5,
+    top: '80%',
+    left: '41.5%',
+    position: "absolute",
+  },
+  swIcon:{
+    flex: 1,
+    width: 75,
+    height: 75,
+  },
+  showTimer:{
+
+  },
+  hideTimer:{
+    opacity: 0
+  }
 });
 
 export default sceneViewStyles;
