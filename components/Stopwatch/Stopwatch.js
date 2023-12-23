@@ -1,17 +1,9 @@
 import { useEffect, useState } from "react";
-import { useFonts } from "expo-font";
-import {
-    View,
-    Text,
-    TouchableOpacity,
-    Button
-  } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 import stopwatchStyles from "./Stopwatch.styles";
 
-
-
-export default function Stopwatch() {
+const Stopwatch = ({ displayTimer }) => {
   const [start, setStart] = useState(false);
   const [count, setCount] = useState(0);
   const [time, setTime] = useState("00:00");
@@ -26,10 +18,7 @@ export default function Stopwatch() {
     const minute = Math.floor((ms / 1000 / 60) % 60)
       .toString()
       .padStart(2, "0");
-    setTime(
-
-      minute + ":" + second 
-    );
+    setTime(minute + ":" + second);
   };
 
   const clearTime = () => {
@@ -54,30 +43,52 @@ export default function Stopwatch() {
   }, [start]);
 
   return (
-    <View style={stopwatchStyles.stopwatchContainer}>
-      <Text style={{...stopwatchStyles.time,fontFamily: "Baloo-Bhaijaan2"}}>{time}</Text>
-      <View
-        style={stopwatchStyles.buttonContainer}
-      >
-        <TouchableOpacity
-          
-          onPress={clearTime}
-        >
-          <Text style={{...stopwatchStyles.clearButton,fontFamily: "Baloo-Bhaijaan2"}}>Clear</Text>
+    <View
+      style={
+        !displayTimer ? { display: "none" } : stopwatchStyles.stopwatchContainer
+      }
+    >
+      <Text style={{ ...stopwatchStyles.time, fontFamily: "Baloo-Bhaijaan2" }}>
+        {time}
+      </Text>
+      <View style={stopwatchStyles.buttonContainer}>
+        <TouchableOpacity onPress={clearTime}>
+          <Text
+            style={{
+              ...stopwatchStyles.clearButton,
+              fontFamily: "Baloo-Bhaijaan2",
+            }}
+          >
+            Clear
+          </Text>
         </TouchableOpacity>
 
         {start ? (
-          <TouchableOpacity
-            onPress={() => setStart(false)}
-          >
-            <Text style={{...stopwatchStyles.stopButton,fontFamily: "Baloo-Bhaijaan2"}}>Stop</Text>
+          <TouchableOpacity onPress={() => setStart(false)}>
+            <Text
+              style={{
+                ...stopwatchStyles.stopButton,
+                fontFamily: "Baloo-Bhaijaan2",
+              }}
+            >
+              Stop
+            </Text>
           </TouchableOpacity>
         ) : (
           <TouchableOpacity className="button" onPress={() => setStart(true)}>
-            <Text style={{...stopwatchStyles.startButton,fontFamily: "Baloo-Bhaijaan2"}}>Start</Text>
+            <Text
+              style={{
+                ...stopwatchStyles.startButton,
+                fontFamily: "Baloo-Bhaijaan2",
+              }}
+            >
+              Start
+            </Text>
           </TouchableOpacity>
         )}
       </View>
     </View>
   );
-}
+};
+
+export default Stopwatch;

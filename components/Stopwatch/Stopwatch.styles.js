@@ -6,54 +6,48 @@ const stopwatchStyles = StyleSheet.create({
     height: "30%",
     width: "100%",
     zIndex: 4,
-    left:'22.5%',
-    top: '30%',
-    flexDirection: 'column',
-
+    left: "22.5%",
+    top: "30%",
+    flexDirection: "column",
   },
-  time:{
+  time: {
     fontSize: 90,
-    color: 'white'
+    color: "white",
   },
-  buttonContainer:{
-    flexDirection: 'column',
-    width: '45%',
-    marginLeft: '5%'
-  }
-  ,
-  clearButton:{
+  buttonContainer: {
+    flexDirection: "column",
+    width: "45%",
+    marginLeft: "5%",
+  },
+  clearButton: {
     fontSize: 20,
     backgroundColor: "gray",
-    borderColor: 'black',
+    borderColor: "black",
     borderRadius: 10,
-    textAlign: 'center',
-    overflow:'hidden',
+    textAlign: "center",
+    overflow: "hidden",
     padding: 5,
-    
   },
-  stopButton:{
+  stopButton: {
     fontSize: 20,
     backgroundColor: "#E34234",
-    borderColor: 'black',
+    borderColor: "black",
     padding: 5,
     borderRadius: 10,
-    textAlign: 'center',
-    overflow:'hidden',
-    marginTop: '20%'
+    textAlign: "center",
+    overflow: "hidden",
+    marginTop: "20%",
   },
-  startButton:{
+  startButton: {
     fontSize: 20,
     backgroundColor: "#3dd276",
-    borderColor: 'black',
+    borderColor: "black",
     padding: 5,
     borderRadius: 10,
-    textAlign: 'center',
-    overflow:'hidden',
-    marginTop: '20%'
-  }
-
-
-
+    textAlign: "center",
+    overflow: "hidden",
+    marginTop: "20%",
+  },
 });
 
 export default stopwatchStyles;

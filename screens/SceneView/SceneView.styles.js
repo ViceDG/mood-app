@@ -22,27 +22,29 @@ const sceneViewStyles = StyleSheet.create({
     textAlign: "center",
     backgroundColor: "#000000c0",
   },
-  swIconContainer:{
+  swIconContainer: {
     flex: 1,
     width: 75,
     height: 75,
-    resizeMode: 'contain',
+    resizeMode: "contain",
     zIndex: 5,
-    top: '80%',
-    left: '41.5%',
+    top: "80%",
+    left: "41.5%",
     position: "absolute",
   },
-  swIcon:{
+  swIcon: {
     flex: 1,
     width: 75,
     height: 75,
   },
-  showTimer:{
-
+  showTimer: {
+    height: "100%",
+    width: "100%",
+    backgroundColor: "rgba(52, 52, 52, 0)",
   },
-  hideTimer:{
-    opacity: 0
-  }
+  hideTimer: {
+    opacity: 0,
+  },
 });
 
 export default sceneViewStyles;

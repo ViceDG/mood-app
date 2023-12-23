@@ -1,11 +1,17 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { View, Text, ImageBackground, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { Audio, Video, ResizeMode } from "expo-av";
 import { useThemeStore } from "../../store";
 import { videoObj } from "../../data/videos";
 import { sceneObj } from "../../data/images";
-import Stopwatch from "../../utils/Stopwatch/Stopwatch";
+import Stopwatch from "../../components/Stopwatch/Stopwatch";
 import {
   desertA,
   fieldA,
@@ -16,12 +22,11 @@ import {
 } from "../../data/audio";
 import sceneViewStyles from "./SceneView.styles";
 
-
 const SceneView = ({ navigation }) => {
   const { theme } = useThemeStore();
   const [sound, setSound] = useState();
   const video = useRef(null);
-  const [showTimer, setShowTimer] = useState(false);
+  const [displayTimer, setDisplayTimer] = useState(false);
 
   const audioObj = {
     desert: desertA,
@@ -45,7 +50,6 @@ const SceneView = ({ navigation }) => {
     playSound();
   }, []);
 
-
   useEffect(() => {
     return sound
       ? () => {
@@ -57,9 +61,7 @@ const SceneView = ({ navigation }) => {
 
   return (
     <View style={sceneViewStyles.container}>
-      {showTimer ?
-      <Stopwatch />
-      : null }
+      <Stopwatch displayTimer={displayTimer} />
       <Video
         ref={video}
         style={sceneViewStyles.video}
@@ -69,11 +71,14 @@ const SceneView = ({ navigation }) => {
         shouldPlay={true}
         isLooping
       />
-      <TouchableOpacity onPress={() => setShowTimer(!showTimer) } style={sceneViewStyles.swIconContainer} >
-      <Image
-        style={sceneViewStyles.swIcon}
-        source={require("../../assets/public/images/icons/stopwatch.png")}
-      />
+      <TouchableOpacity
+        onPress={() => setDisplayTimer(!displayTimer)}
+        style={sceneViewStyles.swIconContainer}
+      >
+        <Image
+          style={sceneViewStyles.swIcon}
+          source={require("../../assets/public/images/icons/stopwatch.png")}
+        />
       </TouchableOpacity>
     </View>
   );
