@@ -30,6 +30,8 @@ const SceneView = ({ navigation }) => {
   const [sound, setSound] = useState();
   const video = useRef(null);
   const [displayTimer, setDisplayTimer] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
+
 
   const audioObj = {
     desert: desertA,
@@ -62,9 +64,10 @@ const SceneView = ({ navigation }) => {
       : undefined;
   }, [sound]);
 
+  console.log(animationKey)
   return (
     <View style={sceneViewStyles.container}>
-      <Stopwatch displayTimer={displayTimer} />
+      <Stopwatch displayTimer={displayTimer} animationKey={animationKey}/>
       <Video
         ref={video}
         style={sceneViewStyles.video}
@@ -75,7 +78,8 @@ const SceneView = ({ navigation }) => {
         isLooping
       />
       <TouchableOpacity
-        onPress={() => setDisplayTimer(!displayTimer)}
+        onPress={() => {setDisplayTimer(!displayTimer);
+          setAnimationKey((prevKey) => prevKey + 1)}}
         style={sceneViewStyles.swIconContainer}
       >
         <Image

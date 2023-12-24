@@ -12,7 +12,7 @@ const stopwatchStyles = StyleSheet.create({
   },
   time: {
     fontSize: 90,
-    color: "white",
+    color: "#f2e5c8",
   },
   buttonContainer: {
     flexDirection: "column",

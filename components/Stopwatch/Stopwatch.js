@@ -2,10 +2,14 @@ import { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import stopwatchStyles from "./Stopwatch.styles";
+import "react-native-reanimated";
+import "react-native-gesture-handler";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
-const Stopwatch = ({ displayTimer }) => {
+import { MotiView } from "moti";
+
+const Stopwatch = ({ displayTimer ,animationKey }) => {
   const [start, setStart] = useState(false);
   const [count, setCount] = useState(0);
   const [time, setTime] = useState("00:00");
@@ -45,7 +49,16 @@ const Stopwatch = ({ displayTimer }) => {
   }, [start]);
 
   return (
-    <View
+
+
+
+    <MotiView
+    key={animationKey}
+    from={displayTimer ? { opacity: 0,} : undefined}
+    animate={{
+      opacity: 1,
+    }}
+    transition={displayTimer ? { type: "timing", duration: 500 } : undefined}
       style={
         !displayTimer ? { display: "none" } : stopwatchStyles.stopwatchContainer
       }
@@ -67,7 +80,7 @@ const Stopwatch = ({ displayTimer }) => {
           <Fontisto
             name="undo"
             size={50}
-            color="rgba(255, 255, 255, 0.47)"
+            color="rgba(82, 82, 82, 0.77)"
             style={{
               ...stopwatchStyles.clearButton,
             }}
@@ -119,8 +132,8 @@ const Stopwatch = ({ displayTimer }) => {
           </TouchableOpacity>
         )}
       </View>
-    </View>
-  );
-};
+    </MotiView>
+  )};
+;
 
 export default Stopwatch;
