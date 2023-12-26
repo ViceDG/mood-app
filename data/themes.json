@@ -1,37 +1,37 @@
 [
   {
     "name": "desert",
-    "description": "This will be a description for specified scene",
+    "description": "Let the sands of time guide you on a journey to the ultimate Zen oasis.",
     "credit": "@simo.sto",
     "creditLink": "https://www.pexels.com/@simo/"
   },
   {
     "name": "field",
-    "description": "This will be a description for specified scene",
+    "description": "Feel your spirit flow with the blades of grass into bliss.",
     "credit": "@Brucelam2603",
     "creditLink": "https://www.pexels.com/@brucelam/"
   },
   {
     "name": "mountains",
-    "description": "This will be a description for specified scene",
+    "description": "Ascend to a heightened sense of self from the mountaintops.",
     "credit": "@edgarcinema",
     "creditLink": "https://www.pexels.com/@edgar-hurtado-1274234/"
   },
   {
     "name": "snow",
-    "description": "This will be a description for specified scene",
+    "description": "Fall gently into a meditative state with your winter wonderland.",
     "credit": "@egszeresz",
     "creditLink": "https://www.pexels.com/@egszeresz/"
   },
   {
     "name": "swamp",
-    "description": "This will be a description for specified scene",
+    "description": "Enjoy the peace of isolation in your personal swamp, far, far away.",
     "credit": "@pressmaster",
     "creditLink": "https://www.pexels.com/@pressmaster/"
   },
   {
     "name": "space",
-    "description": "This will be a description for specified scene",
+    "description": "Reflect on your place in the world through interstellar travel.",
     "credit": "@spacetraveler",
     "creditLink": "https://www.pexels.com/@spacetraveler/"
   }

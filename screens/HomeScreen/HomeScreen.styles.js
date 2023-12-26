@@ -22,7 +22,6 @@ const homeScreenStyles = StyleSheet.create({
     textAlign: "center",
     color: "#f2e5c8",
     fontSize: 70,
-    height: "20%",
     marginBottom: -30,
   },
   flavorText: {
