@@ -55,6 +55,7 @@ const sceneSelectStyles = StyleSheet.create({
   },
   itemContainer: {
     padding: 10,
+    paddingTop: 0,
     height: "100%",
     width: "75%",
   },
@@ -71,12 +72,19 @@ const sceneSelectStyles = StyleSheet.create({
     borderRadius: 10,
     overflow: "hidden",
   },
-  selectButton: {
+  itemTitle: {
     color: "black",
     fontWeight: "bold",
     paddingVertical: 5,
-    width: 100,
+    width: "100%",
     borderRadius: 10,
+  },
+  itemTop: {
+    flex: 1,
+    flexDirection: "row",
+    height: 20,
+    justifyContent: "space-between",
+    paddingBottom: 5,
   },
   selectList: {
     flexGrow: 1,

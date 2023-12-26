@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -9,14 +10,59 @@ import {
   ScrollView,
   SafeAreaView,
 } from "react-native";
+import { Audio } from "expo-av";
 import themes from "../../data/themes.json";
 import sceneSelectStyles from "./SceneSelect.styles";
 import { sceneObj } from "../../data/images";
 import { useThemeStore } from "../../store";
 import { Entypo } from "@expo/vector-icons";
+import {
+  desertA,
+  fieldA,
+  mountainsA,
+  snowA,
+  swampA,
+  spaceA,
+} from "../../data/audio";
 
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
+  const [sound, setSound] = useState();
+  const [audioName, setAudioName] = useState("")
+
+  const audioObj = {
+    desert: desertA,
+    field: fieldA,
+    mountains: mountainsA,
+    snow: snowA,
+    swamp: swampA,
+    space: spaceA,
+  };
+
+  const playSound = async (theme) => {
+    console.log("Loading Sound");
+    const { sound } = await Audio.Sound.createAsync(audioObj[theme]);
+    setSound(sound);
+    setAudioName(theme)
+    console.log("Playing Sound");
+    await sound.setIsLoopingAsync(true);
+    await sound.playAsync();
+  };
+
+  const stopSound = async () => {
+    sound.unloadAsync();
+    setAudioName("")
+  };
+
+  useEffect(() => {
+    console.log(sound);
+    return sound
+      ? () => {
+          console.log("Unloading Sound");
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   const handleClick = (data) => {
     setTheme(data);
@@ -69,9 +115,28 @@ const SceneSelect = ({ navigation }) => {
                   style={sceneSelectStyles.selectImage}
                 />
                 <View style={sceneSelectStyles.itemContainer}>
-                  <Text style={sceneSelectStyles.selectButton}>
-                    {item.name.toUpperCase()}
-                  </Text>
+                  <View style={sceneSelectStyles.itemTop}>
+                    <Text style={sceneSelectStyles.itemTitle}>
+                      {item.name.toUpperCase()}
+                    </Text>
+                    {audioName !== item.name ? (
+                      <TouchableOpacity onPress={() => playSound(item.name)}>
+                        <Entypo
+                          name="controller-play"
+                          size={25}
+                          color="white"
+                        />
+                      </TouchableOpacity>
+                    ) : (
+                      <TouchableOpacity onPress={() => stopSound()}>
+                        <Entypo
+                          name="controller-stop"
+                          size={25}
+                          color="white"
+                        />
+                      </TouchableOpacity>
+                    )}
+                  </View>
                   <Text style={sceneSelectStyles.selectDescription}>
                     {item.description}
                   </Text>
