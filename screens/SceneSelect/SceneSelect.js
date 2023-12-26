@@ -5,13 +5,12 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import themes from "../../data/themes.json";
 import sceneSelectStyles from "./SceneSelect.styles";
 import { sceneObj } from "../../data/images";
 import { useThemeStore } from "../../store";
-import { A } from "@expo/html-elements";
+import { ImageBackground } from "react-native";
 
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
@@ -24,7 +23,7 @@ const SceneSelect = ({ navigation }) => {
   return (
     <View style={sceneSelectStyles.selectContainer}>
       <ImageBackground
-        source={sceneObj.background}
+        source={require("../../assets/public/images/sceneSelectBG.png")}
         style={sceneSelectStyles.bgImage}
         resizeMode="cover"
       >
@@ -57,12 +56,9 @@ const SceneSelect = ({ navigation }) => {
                 <Text style={sceneSelectStyles.selectDescription}>
                   {item.description}
                 </Text>
-                <A
-                  style={sceneSelectStyles.selectCredit}
-                  href={item.creditLink}
-                >
+                <Text style={sceneSelectStyles.selectCredit}>
                   Credit: {item.credit}
-                </A>
+                </Text>
               </View>
             </TouchableOpacity>
           )}

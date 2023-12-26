@@ -1,10 +1,13 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { View, Text, ImageBackground } from "react-native";
+import { View, ImageBackground, TouchableOpacity } from "react-native";
 import { Audio, Video, ResizeMode } from "expo-av";
 import { useThemeStore } from "../../store";
 import { videoObj } from "../../data/videos";
 import { sceneObj } from "../../data/images";
+import Stopwatch from "../../components/Stopwatch/Stopwatch";
+import { MaterialIcons } from "@expo/vector-icons";
+
 import {
   desertA,
   fieldA,
@@ -19,6 +22,8 @@ const SceneView = ({ navigation }) => {
   const { theme } = useThemeStore();
   const [sound, setSound] = useState();
   const video = useRef(null);
+  const [displayTimer, setDisplayTimer] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
 
   const audioObj = {
     desert: desertA,
@@ -50,9 +55,9 @@ const SceneView = ({ navigation }) => {
         }
       : undefined;
   }, [sound]);
-
   return (
     <View style={sceneViewStyles.container}>
+      <Stopwatch displayTimer={displayTimer} animationKey={animationKey} />
       <Video
         ref={video}
         style={sceneViewStyles.video}
@@ -62,13 +67,19 @@ const SceneView = ({ navigation }) => {
         shouldPlay={true}
         isLooping
       />
-      {/* <ImageBackground
-        source={sceneObj[theme]}
-        resizeMode="cover"
-        style={sceneViewStyles.image}
+      <TouchableOpacity
+        onPress={() => {
+          setDisplayTimer(!displayTimer);
+          setAnimationKey((prevKey) => prevKey + 1);
+        }}
+        style={sceneViewStyles.swIconContainer}
       >
-        <Text style={sceneViewStyles.text}>Particles</Text>
-      </ImageBackground> */}
+        {!displayTimer ? (
+          <MaterialIcons name="timer" size={50} color="white" />
+        ) : (
+          <MaterialIcons name="timer-off" size={50} color="white" />
+        )}
+      </TouchableOpacity>
     </View>
   );
 };
