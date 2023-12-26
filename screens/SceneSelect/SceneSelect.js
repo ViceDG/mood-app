@@ -2,7 +2,6 @@ import React from "react";
 import {
   View,
   Text,
-  Button,
   FlatList,
   Image,
   TouchableOpacity,
@@ -12,8 +11,6 @@ import sceneSelectStyles from "./SceneSelect.styles";
 import { sceneObj } from "../../data/images";
 import { useThemeStore } from "../../store";
 import { ImageBackground } from "react-native";
-import { useFonts } from "expo-font";
-
 
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
@@ -26,7 +23,7 @@ const SceneSelect = ({ navigation }) => {
   return (
     <View style={sceneSelectStyles.selectContainer}>
       <ImageBackground
-        source={require('../../assets/public/images/sceneSelectBG.png')}
+        source={require("../../assets/public/images/sceneSelectBG.png")}
         style={sceneSelectStyles.bgImage}
         resizeMode="cover"
       >
@@ -66,7 +63,8 @@ const SceneSelect = ({ navigation }) => {
             </TouchableOpacity>
           )}
         />
-        <TouchableOpacity style={sceneSelectStyles.infoButton}
+        <TouchableOpacity
+          style={sceneSelectStyles.infoButton}
           title="Back"
           onPress={() => navigation.navigate("Home")}
         >
