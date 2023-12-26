@@ -24,18 +24,12 @@ const sceneViewStyles = StyleSheet.create({
   },
   swIconContainer: {
     flex: 1,
-    width: 75,
-    height: 75,
-    resizeMode: "contain",
-    zIndex: 5,
+    zIndex: 2,
     top: "80%",
-    left: "41.5%",
+    width: "100%",
     position: "absolute",
-  },
-  swIcon: {
-    flex: 1,
-    width: 75,
-    height: 75,
+    textAlign: "center",
+    flexDirection: "column",
   },
   showTimer: {
     height: "100%",

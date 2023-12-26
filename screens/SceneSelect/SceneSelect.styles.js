@@ -76,13 +76,11 @@ const sceneSelectStyles = StyleSheet.create({
     color: "black",
     fontWeight: "bold",
     paddingVertical: 5,
-    width: "100%",
     borderRadius: 10,
   },
   itemTop: {
     flex: 1,
     flexDirection: "row",
-    height: 20,
     justifyContent: "space-between",
     paddingBottom: 5,
   },

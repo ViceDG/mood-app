@@ -55,6 +55,7 @@ const SceneView = ({ navigation }) => {
         }
       : undefined;
   }, [sound]);
+  
   return (
     <View style={sceneViewStyles.container}>
       <Stopwatch displayTimer={displayTimer} animationKey={animationKey} />
@@ -67,19 +68,30 @@ const SceneView = ({ navigation }) => {
         shouldPlay={true}
         isLooping
       />
-      <TouchableOpacity
-        onPress={() => {
-          setDisplayTimer(!displayTimer);
-          setAnimationKey((prevKey) => prevKey + 1);
-        }}
-        style={sceneViewStyles.swIconContainer}
-      >
-        {!displayTimer ? (
-          <MaterialIcons name="timer" size={50} color="white" />
-        ) : (
-          <MaterialIcons name="timer-off" size={50} color="white" />
-        )}
-      </TouchableOpacity>
+      <View style={sceneViewStyles.swIconContainer}>
+        <TouchableOpacity
+          onPress={() => {
+            setDisplayTimer(!displayTimer);
+            setAnimationKey((prevKey) => prevKey + 1);
+          }}
+        >
+          {!displayTimer ? (
+            <MaterialIcons
+              style={{ textAlign: "center" }}
+              name="timer"
+              size={50}
+              color="white"
+            />
+          ) : (
+            <MaterialIcons
+              style={{ textAlign: "center" }}
+              name="timer-off"
+              size={50}
+              color="white"
+            />
+          )}
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

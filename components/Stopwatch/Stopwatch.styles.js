@@ -2,11 +2,14 @@ import { StyleSheet } from "react-native";
 
 const stopwatchStyles = StyleSheet.create({
   stopwatchContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+
     position: "absolute",
     height: "30%",
     width: "100%",
     zIndex: 4,
-    left: "22.5%",
     top: "30%",
     flexDirection: "column",
   },
@@ -16,8 +19,6 @@ const stopwatchStyles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "column",
-    width: "45%",
-    marginLeft: "5%",
   },
   clearButton: {
     borderRadius: 10,
