@@ -14,7 +14,6 @@ const sceneSelectStyles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 30,
     marginHorizontal: 10,
-    backgroundColor: "rgba(242, 229, 200, .9)",
   },
   infoButton: {
     textAlign: "center",
@@ -40,8 +39,6 @@ const sceneSelectStyles = StyleSheet.create({
   selectContainer: {
     flex: 1,
     flexDirection: "column",
-    justifyContent: "center",
-    zIndex: 2,
   },
   selectItem: {
     alignItems: "center",

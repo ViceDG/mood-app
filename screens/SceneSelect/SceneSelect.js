@@ -47,7 +47,10 @@ const SceneSelect = ({ navigation }) => {
             >
               SELECT A SCENE
             </Text>
-            <TouchableOpacity style={sceneSelectStyles.infoButton}>
+            <TouchableOpacity
+              style={sceneSelectStyles.infoButton}
+              onPress={() => navigation.navigate("MoreInfo")}
+            >
               <Entypo name="info-with-circle" size={25} color="white" />
             </TouchableOpacity>
           </View>
