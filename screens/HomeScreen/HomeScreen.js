@@ -25,11 +25,24 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={homeScreenStyles.videoView} onLayout={onLayoutRootView}>
-      <Text
-        style={{ ...homeScreenStyles.AppTitle, fontFamily: "Baloo-Bhaijaan2" }}
-      >
-        Zen Portal
-      </Text>
+      <View style={homeScreenStyles.appMain}>
+        <Text
+          style={{
+            ...homeScreenStyles.appTitle,
+            fontFamily: "Baloo-Bhaijaan2",
+          }}
+        >
+          Zen Portal
+        </Text>
+        <Text
+          style={{
+            ...homeScreenStyles.flavorText,
+            fontFamily: "Baloo-Bhaijaan2",
+          }}
+        >
+          Travel to your happy place, virtually...
+        </Text>
+      </View>
       <Video
         ref={video}
         style={homeScreenStyles.video}
@@ -40,19 +53,14 @@ const HomeScreen = ({ navigation }) => {
         isLooping
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}
       />
-      <View style={homeScreenStyles.textView}>
-        <TouchableOpacity
-          style={homeScreenStyles.opacityView}
-          onPress={() => navigation.navigate("SceneSelect")}
-        >
-          <Text style={{ ...homeScreenStyles.text1 }}>
-            Relaxation in an app
-          </Text>
-          <View style={homeScreenStyles.button}>
-            <Text style={{ ...homeScreenStyles.text2 }}>Get Started</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity
+        style={homeScreenStyles.opacityView}
+        onPress={() => navigation.navigate("SceneSelect")}
+      >
+        <View style={homeScreenStyles.button}>
+          <Text style={{ ...homeScreenStyles.buttonText }}>Get Started</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };

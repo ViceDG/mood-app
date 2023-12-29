@@ -4,18 +4,31 @@ const sceneSelectStyles = StyleSheet.create({
   headerText: {
     color: "black",
     fontWeight: "bold",
-    paddingTop: 50,
     fontSize: 20,
     textAlign: "center",
-    backgroundColor: "rgba(242, 229, 200, .9)",
+  },
+  header: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingTop: 30,
+    marginHorizontal: 10,
+  },
+  infoButton: {
+    textAlign: "center",
   },
   bgImage: {
     height: "100%",
     width: "100%",
   },
-  selectDescription: {
-    color: "black",
-    flex: 2,
+  overlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(242, 229, 200, .9)",
   },
   selectImage: {
     borderRadius: 25,
@@ -25,10 +38,7 @@ const sceneSelectStyles = StyleSheet.create({
   },
   selectContainer: {
     flex: 1,
-    paddingTop: 5,
     flexDirection: "column",
-    justifyContent: "center",
-    backgroundColor: "#101010",
   },
   selectItem: {
     alignItems: "center",
@@ -44,9 +54,14 @@ const sceneSelectStyles = StyleSheet.create({
     paddingLeft: 5,
   },
   itemContainer: {
-    paddingLeft: 10,
-    padding: 5,
+    padding: 10,
+    paddingTop: 0,
     height: "100%",
+    width: "75%",
+  },
+  selectDescription: {
+    color: "black",
+    flex: 2,
   },
   selectCredit: {
     backgroundColor: "#E34234",
@@ -57,36 +72,23 @@ const sceneSelectStyles = StyleSheet.create({
     borderRadius: 10,
     overflow: "hidden",
   },
-  selectButton: {
+  itemTitle: {
     color: "black",
     fontWeight: "bold",
     paddingVertical: 5,
-    width: 100,
     borderRadius: 10,
+  },
+  itemTop: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingBottom: 5,
   },
   selectList: {
     flexGrow: 1,
     width: "100%",
     justifyContent: "center",
     alignSelf: "center",
-    backgroundColor: "rgba(242, 229, 200, .9)",
-  },
-  infoButton: {
-    borderColor: "#E34234",
-    position: "absolute",
-    borderWidth: 2,
-    zIndex: 3,
-    padding: 5,
-    paddingHorizontal: 15,
-    borderRadius: 50,
-    left: 370,
-    fontSize: 15,
-    top: 50,
-  },
-  infoText: {
-    color: "#E34234",
-    textAlign: "center",
-    fontWeight: "bold",
   },
 });
 
