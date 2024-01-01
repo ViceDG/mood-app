@@ -28,7 +28,7 @@ import {
 const SceneSelect = ({ navigation }) => {
   const setTheme = useThemeStore((state) => state.setTheme);
   const [sound, setSound] = useState();
-  const [audioName, setAudioName] = useState("")
+  const [audioName, setAudioName] = useState("");
 
   const audioObj = {
     desert: desertA,
@@ -43,7 +43,7 @@ const SceneSelect = ({ navigation }) => {
     console.log("Loading Sound");
     const { sound } = await Audio.Sound.createAsync(audioObj[theme]);
     setSound(sound);
-    setAudioName(theme)
+    setAudioName(theme);
     console.log("Playing Sound");
     await sound.setIsLoopingAsync(true);
     await sound.playAsync();
@@ -51,7 +51,7 @@ const SceneSelect = ({ navigation }) => {
 
   const stopSound = async () => {
     sound.unloadAsync();
-    setAudioName("")
+    setAudioName("");
   };
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const SceneSelect = ({ navigation }) => {
 
   return (
     <SafeAreaView style={sceneSelectStyles.selectContainer}>
-      <ScrollView>
+      <ScrollView style={{ backgroundColor: "black" }}>
         <ImageBackground
           source={require("../../assets/public/images/sceneSelectBG.png")}
           style={sceneSelectStyles.bgImage}
@@ -95,7 +95,7 @@ const SceneSelect = ({ navigation }) => {
             </Text>
             <TouchableOpacity
               style={sceneSelectStyles.infoButton}
-              onPress={() => navigation.navigate("MoreInfo")}
+              onPress={() => navigation.navigate("InfoScreen")}
             >
               <Entypo name="info-with-circle" size={25} color="white" />
             </TouchableOpacity>
