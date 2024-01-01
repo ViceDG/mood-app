@@ -70,8 +70,8 @@ const SceneSelect = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={sceneSelectStyles.selectContainer}>
-      <ScrollView>
+    // <SafeAreaView style={sceneSelectStyles.selectContainer}>
+      // <ScrollView style={{backgroundColor:"black"}}>
         <ImageBackground
           source={require("../../assets/public/images/sceneSelectBG.png")}
           style={sceneSelectStyles.bgImage}
@@ -95,7 +95,7 @@ const SceneSelect = ({ navigation }) => {
             </Text>
             <TouchableOpacity
               style={sceneSelectStyles.infoButton}
-              onPress={() => navigation.navigate("MoreInfo")}
+              onPress={() => navigation.navigate("InfoScreen")}
             >
               <Entypo name="info-with-circle" size={25} color="white" />
             </TouchableOpacity>
@@ -148,8 +148,8 @@ const SceneSelect = ({ navigation }) => {
             )}
           />
         </ImageBackground>
-      </ScrollView>
-    </SafeAreaView>
+      // </ScrollView>
+    // </SafeAreaView>
   );
 };
 

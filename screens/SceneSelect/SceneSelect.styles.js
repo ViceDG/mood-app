@@ -17,6 +17,7 @@ const sceneSelectStyles = StyleSheet.create({
   },
   infoButton: {
     textAlign: "center",
+    marginTop: "5%"
   },
   bgImage: {
     height: "100%",
@@ -39,6 +40,7 @@ const sceneSelectStyles = StyleSheet.create({
   selectContainer: {
     flex: 1,
     flexDirection: "column",
+
   },
   selectItem: {
     alignItems: "center",

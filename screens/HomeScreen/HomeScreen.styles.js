@@ -48,7 +48,8 @@ const homeScreenStyles = StyleSheet.create({
   button: {
     backgroundColor: "#f2e5c8",
     width: "90%",
-    margin: "auto",
+    marginLeft: "5%",
+    marginBottom: "5%",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
