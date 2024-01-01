@@ -66,6 +66,7 @@ const SceneSelect = ({ navigation }) => {
   }, [sound]);
 
   const handleClick = (data) => {
+    stopSound();
     setTheme(data);
     navigation.navigate("SceneView");
   };
@@ -79,7 +80,7 @@ const SceneSelect = ({ navigation }) => {
           resizeMode="cover"
         >
           <View style={sceneSelectStyles.overlay} />
-          <Header title="SELECT A SCENE" navigation={navigation}/>
+          <Header title="SELECT A SCENE" navigation={navigation} />
           <FlatList
             data={themes}
             contentContainerStyle={sceneSelectStyles.selectList}
