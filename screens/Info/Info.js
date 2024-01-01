@@ -1,25 +1,28 @@
-import { useState, useCallback, useRef } from "react";
+import React from "react";
 import {
   View,
   Text,
+  Image,
   TouchableOpacity,
+  ImageBackground,
   ScrollView,
   SafeAreaView,
 } from "react-native";
 import InfoStyles from "./Info.styles";
+import Header from "../../components/Header/Header";
 
-const InfoScreen = () => {
+const InfoScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={InfoStyles.selectContainer}>
-      <ScrollView>
-        <Text
-          style={{
-            ...InfoStyles.headerText,
-            fontFamily: "Baloo-Bhaijaan2",
-          }}
+      <ScrollView style={{ backgroundColor: "#F3E6C5" }}>
+        <ImageBackground
+          source={require("../../assets/public/images/sceneSelectBG.png")}
+          style={InfoStyles.bgImage}
+          resizeMode="cover"
         >
-          About
-        </Text>
+          <View style={InfoStyles.overlay} />
+          <Header title="ABOUT US" goto="SceneSelect" navigation={navigation} />
+        </ImageBackground>
       </ScrollView>
     </SafeAreaView>
   );

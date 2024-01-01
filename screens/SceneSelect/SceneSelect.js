@@ -13,6 +13,7 @@ import {
 import { Audio } from "expo-av";
 import themes from "../../data/themes.json";
 import sceneSelectStyles from "./SceneSelect.styles";
+import Header from "../../components/Header/Header";
 import { sceneObj } from "../../data/images";
 import { useThemeStore } from "../../store";
 import { Entypo } from "@expo/vector-icons";
@@ -71,35 +72,14 @@ const SceneSelect = ({ navigation }) => {
 
   return (
     <SafeAreaView style={sceneSelectStyles.selectContainer}>
-      <ScrollView style={{ backgroundColor: "black" }}>
+      <ScrollView style={{ backgroundColor: "#F3E6C5" }}>
         <ImageBackground
           source={require("../../assets/public/images/sceneSelectBG.png")}
           style={sceneSelectStyles.bgImage}
           resizeMode="cover"
         >
           <View style={sceneSelectStyles.overlay} />
-          <View style={sceneSelectStyles.header}>
-            <TouchableOpacity
-              style={sceneSelectStyles.infoButton}
-              onPress={() => navigation.navigate("Home")}
-            >
-              <Entypo name="home" size={25} color="white" />
-            </TouchableOpacity>
-            <Text
-              style={{
-                ...sceneSelectStyles.headerText,
-                fontFamily: "Baloo-Bhaijaan2",
-              }}
-            >
-              SELECT A SCENE
-            </Text>
-            <TouchableOpacity
-              style={sceneSelectStyles.infoButton}
-              onPress={() => navigation.navigate("InfoScreen")}
-            >
-              <Entypo name="info-with-circle" size={25} color="white" />
-            </TouchableOpacity>
-          </View>
+          <Header title="SELECT A SCENE" navigation={navigation}/>
           <FlatList
             data={themes}
             contentContainerStyle={sceneSelectStyles.selectList}
@@ -124,7 +104,7 @@ const SceneSelect = ({ navigation }) => {
                         <Entypo
                           name="controller-play"
                           size={25}
-                          color="white"
+                          color="#5f8971"
                         />
                       </TouchableOpacity>
                     ) : (
@@ -132,7 +112,7 @@ const SceneSelect = ({ navigation }) => {
                         <Entypo
                           name="controller-stop"
                           size={25}
-                          color="white"
+                          color="#81272e"
                         />
                       </TouchableOpacity>
                     )}

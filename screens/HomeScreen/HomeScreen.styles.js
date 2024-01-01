@@ -36,12 +36,6 @@ const homeScreenStyles = StyleSheet.create({
     margin: "auto",
     zIndex: 3,
   },
-  opacityView: {
-    backgroundColor: "transparent",
-    width: "100%",
-    bottom: 10,
-    flexDirection: "column",
-  },
   button: {
     position: "absolute",
     alignSelf: "center",
