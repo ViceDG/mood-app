@@ -36,6 +36,9 @@ const SceneView = ({ navigation }) => {
   };
 
   const playSound = async () => {
+    await Audio.setAudioModeAsync({
+      playsInSilentModeIOS: true,
+    });
     console.log("Loading Sound");
     const { sound } = await Audio.Sound.createAsync(audioObj[theme]);
     setSound(sound);

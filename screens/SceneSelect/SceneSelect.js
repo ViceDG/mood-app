@@ -41,6 +41,9 @@ const SceneSelect = ({ navigation }) => {
   };
 
   const playSound = async (theme) => {
+    await Audio.setAudioModeAsync({
+      playsInSilentModeIOS: true,
+    });
     console.log("Loading Sound");
     const { sound } = await Audio.Sound.createAsync(audioObj[theme]);
     setSound(sound);
