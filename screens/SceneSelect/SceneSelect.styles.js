@@ -1,24 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const sceneSelectStyles = StyleSheet.create({
-  headerText: {
-    color: "black",
-    fontWeight: "bold",
-    fontSize: 20,
-    textAlign: "center",
-  },
-  header: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingTop: 30,
-    marginHorizontal: 10,
-  },
-  infoButton: {
-    textAlign: "center",
-    marginTop: "5%"
-  },
   bgImage: {
     height: "100%",
     width: "100%",
@@ -40,7 +22,6 @@ const sceneSelectStyles = StyleSheet.create({
   selectContainer: {
     flex: 1,
     flexDirection: "column",
-
   },
   selectItem: {
     alignItems: "center",
@@ -66,7 +47,7 @@ const sceneSelectStyles = StyleSheet.create({
     flex: 2,
   },
   selectCredit: {
-    backgroundColor: "#E34234",
+    backgroundColor: "#81272e",
     color: "white",
     textAlign: "center",
     width: "75%",

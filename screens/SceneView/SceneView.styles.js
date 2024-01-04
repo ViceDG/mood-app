@@ -25,7 +25,7 @@ const sceneViewStyles = StyleSheet.create({
   swIconContainer: {
     flex: 1,
     zIndex: 2,
-    top: "80%",
+    bottom: 40,
     width: "100%",
     position: "absolute",
     textAlign: "center",

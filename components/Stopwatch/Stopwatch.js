@@ -64,7 +64,7 @@ const Stopwatch = ({ displayTimer, animationKey }) => {
           <Fontisto
             name="undo"
             size={50}
-            color="rgba(82, 82, 82, 0.77)"
+            color="gray"
             style={stopwatchStyles.clearButton}
           />
         </TouchableOpacity>
@@ -74,7 +74,7 @@ const Stopwatch = ({ displayTimer, animationKey }) => {
             <Fontisto
               name="stop"
               size={50}
-              color="rgba(255, 7, 15, 0.51)"
+              color="#81272e"
               style={stopwatchStyles.stopButton}
             />
           </TouchableOpacity>
@@ -87,7 +87,7 @@ const Stopwatch = ({ displayTimer, animationKey }) => {
             <Fontisto
               name="play"
               size={50}
-              color="rgba(0, 162, 68, 0.64)"
+              color="#5f8971"
               style={stopwatchStyles.startButton}
             />
           </TouchableOpacity>

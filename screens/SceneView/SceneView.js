@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState, useRef } from "react";
 import { View, ImageBackground, TouchableOpacity } from "react-native";
 import { Audio, Video, ResizeMode } from "expo-av";
+import { useKeepAwake } from "expo-keep-awake";
 import { useThemeStore } from "../../store";
 import { videoObj } from "../../data/videos";
 import { sceneObj } from "../../data/images";
@@ -35,6 +36,9 @@ const SceneView = ({ navigation }) => {
   };
 
   const playSound = async () => {
+    await Audio.setAudioModeAsync({
+      playsInSilentModeIOS: true,
+    });
     console.log("Loading Sound");
     const { sound } = await Audio.Sound.createAsync(audioObj[theme]);
     setSound(sound);
@@ -42,6 +46,8 @@ const SceneView = ({ navigation }) => {
     await sound.setIsLoopingAsync(true);
     await sound.playAsync();
   };
+
+  useKeepAwake();
 
   useEffect(() => {
     playSound();
@@ -55,7 +61,7 @@ const SceneView = ({ navigation }) => {
         }
       : undefined;
   }, [sound]);
-  
+
   return (
     <View style={sceneViewStyles.container}>
       <Stopwatch displayTimer={displayTimer} animationKey={animationKey} />
