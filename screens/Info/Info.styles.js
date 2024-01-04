@@ -22,6 +22,7 @@ const InfoStyles = StyleSheet.create({
   bgImage: {
     height: "100%",
     width: "100%",
+    flex: 1
   },
   overlay: {
     position: "absolute",
@@ -38,28 +39,21 @@ const InfoStyles = StyleSheet.create({
     width: '100%',
   },
   aboutContainer:{
-    flex: 1,
-    width: 500,
-    height: 400,
-    justifyContent: "center",
-    alignSelf: "center",
-    backgroundColor:'orange'
+    height:'100%',
   },
   vdgLogo:{
     width: 275,
     height: 100,
-    paddingTop: 20,
+    marginTop: 80,
     alignSelf: 'center',
     margin: 'auto'
   },
   vdgBlurb:{
     textAlign: 'center',
-    marginHorizontal: 50,
     fontSize: 20,
     fontWeight: 'lighter',
-    marginVertical: 30,
+    marginVertical: 20,
     padding: 10,
-    backgroundColor: "rgba(243, 220, 170, .7) ",
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderTopRightRadius: 10,
@@ -67,18 +61,18 @@ const InfoStyles = StyleSheet.create({
   },
   jfLogo:{
     width: 275,
-    height: 200,
+    height: 150,
+    marginTop: 70,
     alignSelf: 'center',
-    margin: 'auto'
+    margin: 'auto',
+    borderRadius: 25,
   },
   jfBlurb:{
     textAlign: 'center',
-    marginHorizontal: 50,
     fontSize: 20,
     fontWeight: 'lighter',
     marginVertical: 30,
     padding: 10,
-    backgroundColor: "rgba(243, 220, 170, .7) ",
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderTopRightRadius: 10,

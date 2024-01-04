@@ -31,6 +31,7 @@ const InfoScreen = ({ navigation }) => {
         >
           <View style={InfoStyles.overlay} />
           <Header title="ABOUT US" goto="SceneSelect" navigation={navigation} />
+          <View style={InfoStyles.aboutContainer}>
           <Pressable onPress={vdgLink}>
             <Image
               source={require("../../assets/public/images/vdgLogo.png")}
@@ -47,7 +48,6 @@ const InfoScreen = ({ navigation }) => {
             <Image
               source={require("../../assets/public/images/jazzfishCover.png")}
               style={InfoStyles.jfLogo}
-              resizeMode="contain"
             ></Image>
           </Pressable>
           <Text style={InfoStyles.jfBlurb}>
@@ -56,6 +56,7 @@ const InfoScreen = ({ navigation }) => {
             Beyond music, their genuine passion lies in the artistry of
             bread-making, adding a unique layer to their multifaceted persona..{" "}
           </Text>
+          </View>
         </ImageBackground>
       </ScrollView>
     </SafeAreaView>
