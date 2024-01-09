@@ -54,13 +54,11 @@ const HomeScreen = ({ navigation }) => {
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}
       />
       <TouchableOpacity
-        style={homeScreenStyles.opacityView}
-        onPress={() => navigation.navigate("SceneSelect")}
-      >
-        <View style={homeScreenStyles.button}>
+          style={homeScreenStyles.button}
+          onPress={() => navigation.navigate("SceneSelect")}
+        >
           <Text style={{ ...homeScreenStyles.buttonText }}>Get Started</Text>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
     </View>
   );
 };

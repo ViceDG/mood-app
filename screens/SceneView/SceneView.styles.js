@@ -25,11 +25,14 @@ const sceneViewStyles = StyleSheet.create({
   swIconContainer: {
     flex: 1,
     zIndex: 2,
-    top: "80%",
-    width: "100%",
+    bottom: 20,
+    width: "80%",
     position: "absolute",
     textAlign: "center",
-    flexDirection: "column",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    alignSelf: "center"
   },
   showTimer: {
     height: "100%",

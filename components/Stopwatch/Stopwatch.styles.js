@@ -5,7 +5,6 @@ const stopwatchStyles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-
     position: "absolute",
     height: "30%",
     width: "100%",
@@ -23,17 +22,14 @@ const stopwatchStyles = StyleSheet.create({
   clearButton: {
     borderRadius: 10,
     textAlign: "center",
-    overflow: "hidden",
     padding: 5,
   },
   stopButton: {
     padding: 10,
     textAlign: "center",
-    overflow: "hidden",
     marginTop: 20,
   },
   startButton: {
-    borderColor: "black",
     padding: 10,
     textAlign: "center",
     marginTop: 20,
