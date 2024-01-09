@@ -45,9 +45,9 @@ const InfoScreen = ({ navigation }) => {
             </Pressable>
             <Text style={InfoStyles.vdgBlurb}>
               This app was developed as a collaborative effort among Vice Dev
-              Group! We are a small dedicated collective of full-stack
-              developers looking to expand and utilize our skills through a
-              variety of development projects.{" "}
+              Group! We are a small dedicated collective of full-stack engineers
+              looking to expand and utilize our skills through a variety of
+              development projects.{" "}
               <Text style={InfoStyles.textLink} onPress={vdgLink}>
                 Check out our site
               </Text>{" "}
