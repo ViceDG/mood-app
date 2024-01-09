@@ -76,6 +76,16 @@ const SceneView = ({ navigation }) => {
       />
       <View style={sceneViewStyles.swIconContainer}>
         <TouchableOpacity
+          onPress={() => navigation.navigate("SceneSelect")}
+        >
+          <MaterialIcons
+            style={{ textAlign: "center" }}
+            name="undo"
+            size={50}
+            color="white"
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
           onPress={() => {
             setDisplayTimer(!displayTimer);
             setAnimationKey((prevKey) => prevKey + 1);
