@@ -9,7 +9,7 @@ import "react-native-gesture-handler";
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar style="dark" translucent backgroundColor="transparent" />
+      <StatusBar style="light" translucent backgroundColor="transparent" />
       <MyStack />
     </NavigationContainer>
   );
