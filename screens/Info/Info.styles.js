@@ -7,22 +7,10 @@ const InfoStyles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
   },
-  header: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingTop: 30,
-    marginVertical: "5%",
-    marginHorizontal: 10,
-  },
-  infoButton: {
-    textAlign: "center",
-  },
   bgImage: {
     height: "100%",
     width: "100%",
-    flex: 1
+    flex: 1,
   },
   overlay: {
     position: "absolute",
@@ -35,49 +23,42 @@ const InfoStyles = StyleSheet.create({
   selectContainer: {
     flex: 1,
     flexDirection: "column",
-    height: '100%',
-    width: '100%',
+    width: "100%",
   },
-  aboutContainer:{
-    height:'100%',
-  },
-  vdgLogo:{
+  vdgLogo: {
     width: 275,
     height: 100,
-    marginTop: 80,
-    alignSelf: 'center',
-    margin: 'auto'
+    marginTop: 40,
+    alignSelf: "center",
+    margin: "auto",
   },
-  vdgBlurb:{
-    textAlign: 'center',
+  vdgBlurb: {
+    textAlign: "center",
     fontSize: 20,
-    fontWeight: 'lighter',
+    fontWeight: "light",
     marginVertical: 20,
     padding: 10,
-    borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10,
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
   },
-  jfLogo:{
+  textLink: {
+    fontSize: 20,
+    fontWeight: "light",
+    color: "blue",
+  },
+  jfLogo: {
     width: 275,
-    height: 150,
-    marginTop: 70,
-    alignSelf: 'center',
-    margin: 'auto',
+    height: 275,
+    marginTop: 40,
+    alignSelf: "center",
+    margin: "auto",
     borderRadius: 25,
   },
-  jfBlurb:{
-    textAlign: 'center',
+  jfBlurb: {
+    textAlign: "center",
     fontSize: 20,
-    fontWeight: 'lighter',
+    fontWeight: "light",
     marginVertical: 30,
     padding: 10,
-    borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10,
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
-  }
+  },
 });
 
 export default InfoStyles;
