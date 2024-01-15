@@ -1,6 +1,11 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { View, ImageBackground, TouchableOpacity } from "react-native";
+import {
+  View,
+  ImageBackground,
+  TouchableOpacity,
+  Platform,
+} from "react-native";
 import { Audio, Video, ResizeMode } from "expo-av";
 import { useKeepAwake } from "expo-keep-awake";
 import { useThemeStore } from "../../store";
@@ -65,19 +70,33 @@ const SceneView = ({ navigation }) => {
   return (
     <View style={sceneViewStyles.container}>
       <Stopwatch displayTimer={displayTimer} animationKey={animationKey} />
-      <Video
-        ref={video}
-        style={sceneViewStyles.video}
-        source={videoObj[theme]}
-        resizeMode={ResizeMode.COVER}
-        isMuted
-        shouldPlay={true}
-        isLooping
-      />
+      {Platform.OS === "web" ? (
+        <Video
+          ref={video}
+          style={sceneViewStyles.video}
+          source={videoObj[theme]}
+          resizeMode={ResizeMode.COVER}
+          isMuted
+          shouldPlay={true}
+          isLooping
+          onReadyForDisplay={(videoData) => {
+            videoData.srcElement.style.position = "initial";
+            videoData.srcElement.style.height = "100vh";
+          }}
+        />
+      ) : (
+        <Video
+          ref={video}
+          style={sceneViewStyles.video}
+          source={videoObj[theme]}
+          resizeMode={ResizeMode.COVER}
+          isMuted
+          shouldPlay={true}
+          isLooping
+        />
+      )}
       <View style={sceneViewStyles.swIconContainer}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("SceneSelect")}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate("SceneSelect")}>
           <MaterialIcons
             style={{ textAlign: "center" }}
             name="undo"
